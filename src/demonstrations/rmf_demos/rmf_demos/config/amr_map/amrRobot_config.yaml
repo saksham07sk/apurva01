@@ -1,0 +1,209 @@
+# FLEET CONFIG =================================================================
+# RMF Fleet parameters
+
+rmf_fleet:
+  name: "amrRobot"
+  fleet_manager:
+    ip: "127.0.0.1"
+    port: 22011
+    user: "some_user"
+    password: "some_password"
+  limits:
+    linear: [1.5, 2.5] # INCREASED: Better speed while maintaining collision avoidance
+    angular: [1.0, 1.5] # INCREASED: Better turning while maintaining control
+  profile: # Robot profile is modelled as a circle
+    footprint: 0.6 # OPTIMIZED: Balance between collision detection and accessibility
+    vicinity: 1.0 # OPTIMIZED: Collision avoidance without blocking destinations
+  reversible: False # ENABLED: Better collision avoidance with reverse capability
+  battery_system:
+    voltage: 12.0 # V
+    capacity: 24.0 # Ahr
+    charging_current: 5.0 # A
+  mechanical_system:
+    mass: 20.0 # kg
+    moment_of_inertia: 10.0 #kgm^2
+    friction_coefficient: 0.22
+  ambient_system:
+    power: 20.0 # W
+  tool_system:
+    power: 0.0 # W
+  recharge_threshold: 0.20 # Battery level below which robots in this fleet will not operate (DEMO: 20% for normal operation)
+  recharge_soc: 1.00 # Battery level to which robots in this fleet should be charged up to during recharging tasks (DEMO: 100% for full charging)
+  publish_fleet_state: 50.0 # INCREASED: From 10.0 to 30.0 Hz to fix vanishing robots
+  account_for_battery_drain: True
+  task_capabilities: # Specify the types of RMF Tasks that robots in this fleet are capable of performing
+    loop: True
+    delivery: True
+    clean: False
+    finishing_request: "park" # [park, charge, nothing] - CHANGED to "charge" so robots go to charger when battery is low
+
+# Transform Configuration
+transform_config:
+  publish_rate: 50.0  # Hz - Increased to match fleet state rate
+  transform_tolerance: 0.1  # seconds - Increased for better synchronization
+  use_sim_time: true  # If you're running in simulation
+  buffer_size: 10.0  # seconds - Increased buffer for better stability
+  max_delay: 0.1  # Maximum delay for TF updates - Increased for better sync
+
+# Reference Coordinates Configuration
+reference_coordinates:
+  rmf: [[0.0, 0.0 ],
+        [1.0, 1.0],
+        [2.0, 2.0],
+        [3.0, 3.0]]
+  robot: [[0.0, 0.0 ],
+        [1.0, 1.0],
+        [2.0, 2.0],
+        [3.0, 3.0]]
+
+# AmrRobot CONFIG =================================================================
+
+robots:
+  # Configuration for amrRobot1
+  amrRobot1:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 50.0  # INCREASED: Better collision detection and avoidance
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot1_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot1_charger"
+      initial_battery_level: 1.0 # FIXED: Start with 100% battery (full charge) 
+
+  # Configuration for amrRobot2
+  amrRobot2:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 50.0  # INCREASED: Better collision detection and avoidance
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot2_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot2_charger"
+      initial_battery_level: 1.0 # FIXED: Start with 100% battery (full charge) 
+
+  # Configuration for amrRobot3
+  amrRobot3:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 50.0  # INCREASED: Better collision detection and avoidance
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot3_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot3_charger"
+      initial_battery_level: 1.0 # FIXED: Start with 100% battery (full charge) 
+
+  # Configuration for amrRobot4
+  amrRobot4:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 50.0  # INCREASED: Better collision detection and avoidance
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot4_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot4_charger"
+      initial_battery_level: 1.0 # FIXED: Start with 100% battery (full charge) 
+
+  # Configuration for amrRobot5
+  amrRobot5:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 50.0  # INCREASED: Better collision detection and avoidance
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot5_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot5_charger"
+      initial_battery_level: 1.0 # FIXED: Start with 100% battery (full charge) 
+
+
+  amrRobot6:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 30.0  # INCREASED for faster detection of issues (was 20.0)
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot6_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot6_charger"
+      initial_battery_level: 1.00 # DEMO: Start with 100% battery (full charge) 
+
+  amrRobot7:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 30.0  # INCREASED for faster detection of issues (was 20.0)
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot7_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot7_charger"
+      initial_battery_level: 1.00 # DEMO: Start with 99% battery (at threshold) 
+
+  amrRobot8:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 30.0  # INCREASED for faster detection of issues (was 20.0)
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot8_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot8_charger"
+      initial_battery_level: 1.00 # DEMO: Start with 100% battery (full charge) 
+
+  amrRobot9:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 30.0  # INCREASED for faster detection of issues (was 20.0)
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot9_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot9_charger"
+      initial_battery_level: 1.00 # DEMO: Start with 99% battery (at threshold) 
+
+  amrRobot10:
+    robot_config:
+      max_delay: 20.0 # OPTIMIZED: Increased for complex center navigation (was 10.0)
+      filter_waypoints: True # ENABLED to skip unreachable waypoints
+    rmf_config:
+      robot_state_update_frequency: 30.0  # INCREASED for faster detection of issues (was 20.0)
+      start:
+        map_name: "L1"
+        waypoint: "amrRobot10_charger"
+        orientation: 3.14159 # radians
+      charger:
+        waypoint: "amrRobot10_charger"
+      initial_battery_level: 1.00 # DEMO: Start with 100% battery (full charge) 
+
+
+

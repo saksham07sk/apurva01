@@ -1,0 +1,481 @@
+<?xml version="1.0"?>
+
+<sdf version='1.9'>
+  <model name='AmrRobot'>
+    <plugin name="slotcar" filename="libslotcar.so">
+
+      <nominal_drive_speed>1.5</nominal_drive_speed>
+      <nominal_drive_speed_with_load>1.0</nominal_drive_speed_with_load>
+      <nominal_drive_acceleration>0.25</nominal_drive_acceleration>
+      <max_drive_acceleration>0.75</max_drive_acceleration>
+
+      <nominal_turn_speed>0.6</nominal_turn_speed>
+      <nominal_turn_acceleration>1.0</nominal_turn_acceleration>
+      <max_turn_acceleration>2.0</max_turn_acceleration>
+
+      <tire_radius>0.1</tire_radius>
+      <base_width>0.965</base_width>
+
+      <stop_distance>2.0</stop_distance>
+      <stop_radius>0.5</stop_radius>
+
+      <!-- Can the robot drive backwards -->
+      <reversible>false</reversible>
+
+      <!-- Battery params -->
+      <nominal_voltage>12.0</nominal_voltage>
+      <nominal_capacity>24.0</nominal_capacity>
+      <charging_current>5.0</charging_current>
+
+      <!-- Physical params -->
+      <mass>415.206</mass>
+      <inertia>162.198</inertia>
+      <friction_coefficient>0.45</friction_coefficient>
+
+      <!-- Power systems -->
+      <nominal_power>20.0</nominal_power>
+
+    </plugin>
+    
+    <link name='dummy_link'>
+      <inertial>
+        <pose>0.00024084430379137101 -2.139127131351967e-18 0.58502427594312556 0 0 0</pose>
+        <mass>415.20600000000002</mass>
+        <inertia>
+          <ixx>162.1980172259444</ixx>
+          <ixy>-2.1391271313519671e-19</ixy>
+          <ixz>0.024802427594312549</ixz>
+          <iyy>146.50755782351399</iyy>
+          <iyz>-5.3843142689993904e-16</iyz>
+          <izz>114.6476265282363</izz>
+        </inertia>
+      </inertial>
+      <collision name='dummy_link_fixed_joint_lump__base_link_collision'>
+        <pose>0 0 0.20399999999999999 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.472 1.374 0.20799999999999999</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__left_back_caster_wheel_link_collision_1'>
+        <pose>-0.54080000000000006 -0.39800000000000002 0.053999999999999992 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.029999999999999999</length>
+            <radius>0.050000000000000003</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__left_back_leg_link_collision_2'>
+        <pose>-0.34749999999999998 -0.42349999999999999 0.44699999999999995 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.43999999999999995 0.070000000000000007 0.070000000000000007</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__left_front_caster_wheel_link_collision_3'>
+        <pose>0.54080000000000006 -0.39800000000000002 0.053999999999999992 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.029999999999999999</length>
+            <radius>0.050000000000000003</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__left_front_leg_link_collision_4'>
+        <pose>0.34749999999999998 -0.42349999999999999 0.44699999999999995 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.43999999999999995 0.070000000000000007 0.070000000000000007</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__right_back_caster_wheel_link_collision_5'>
+        <pose>-0.54080000000000006 0.39800000000000002 0.053999999999999992 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.029999999999999999</length>
+            <radius>0.050000000000000003</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__right_back_leg_link_collision_6'>
+        <pose>-0.34749999999999998 0.42349999999999999 0.44699999999999995 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.43999999999999995 0.070000000000000007 0.070000000000000007</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__right_front_caster_wheel_link_collision_7'>
+        <pose>0.54080000000000006 0.39800000000000002 0.053999999999999992 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.029999999999999999</length>
+            <radius>0.050000000000000003</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__right_front_leg_link_collision_8'>
+        <pose>0.34749999999999998 0.42349999999999999 0.44699999999999995 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.43999999999999995 0.070000000000000007 0.070000000000000007</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__scanner_laser_collision_9'>
+        <pose>0.5 0 0.33700000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.10000000000000001</length>
+            <radius>0.080000000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='dummy_link_fixed_joint_lump__top_link_collision_10'>
+        <pose>0 0 0.7035 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.21 1.4930000000000001 0.074999999999999997</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='dummy_link_fixed_joint_lump__base_link_visual'>
+        <pose>0 0 0.20399999999999999 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.3520000000000001 1.194 0.20799999999999999</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0 1 1</diffuse>
+          <ambient>0 0 1 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__left_back_caster_wheel_link_visual_1'>
+        <pose>-0.54080000000000006 -0.39800000000000002 0.053999999999999992 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.029999999999999999</length>
+            <radius>0.050000000000000003</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__left_back_leg_link_visual_2'>
+        <pose>-0.34749999999999998 -0.42349999999999999 0.44699999999999995 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.43999999999999995 0.070000000000000007 0.070000000000000007</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__left_front_caster_wheel_link_visual_3'>
+        <pose>0.54080000000000006 -0.39800000000000002 0.053999999999999992 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.029999999999999999</length>
+            <radius>0.050000000000000003</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__left_front_leg_link_visual_4'>
+        <pose>0.34749999999999998 -0.42349999999999999 0.44699999999999995 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.43999999999999995 0.070000000000000007 0.070000000000000007</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__right_back_caster_wheel_link_visual_5'>
+        <pose>-0.54080000000000006 0.39800000000000002 0.053999999999999992 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.029999999999999999</length>
+            <radius>0.050000000000000003</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__right_back_leg_link_visual_6'>
+        <pose>-0.34749999999999998 0.42349999999999999 0.44699999999999995 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.43999999999999995 0.070000000000000007 0.070000000000000007</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__right_front_caster_wheel_link_visual_7'>
+        <pose>0.54080000000000006 0.39800000000000002 0.053999999999999992 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.029999999999999999</length>
+            <radius>0.050000000000000003</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__right_front_leg_link_visual_8'>
+        <pose>0.34749999999999998 0.42349999999999999 0.44699999999999995 0 1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.43999999999999995 0.070000000000000007 0.070000000000000007</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__scanner_laser_visual_9'>
+        <pose>0.5 0 0.33700000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.10000000000000001</length>
+            <radius>0.080000000000000002</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>1 1 0 1</diffuse>
+          <ambient>1 1 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='dummy_link_fixed_joint_lump__top_link_visual_10'>
+        <pose>0 0 0.7035 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.1200000000000001 1.403 0.074999999999999997</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0.625 0.625 1</diffuse>
+          <ambient>0 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_wheel_joint' type='revolute'>
+      <pose relative_to='dummy_link'>0 0.48249999999999998 0.104 0 0 0</pose>
+      <parent>dummy_link</parent>
+      <child>left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>1</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.20000000000000001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_wheel'>
+      <pose relative_to='left_wheel_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 1.5707963267948959 0 0</pose>
+        <mass>2.6819999999999999</mass>
+        <inertia>
+          <ixx>0.0071890047162000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0071890047162000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0127688094324</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_wheel_collision'>
+        <pose>0 0 0 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.059999999999999998</length>
+            <radius>0.09758</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='left_wheel_visual'>
+        <pose>0 0 0 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.059999999999999998</length>
+            <radius>0.09758</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>1 0 0 1</diffuse>
+          <ambient>1 0 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_wheel_joint' type='revolute'>
+      <pose relative_to='dummy_link'>0 -0.48249999999999998 0.104 0 0 0</pose>
+      <parent>dummy_link</parent>
+      <child>right_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>1</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <damping>0.20000000000000001</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_wheel'>
+      <pose relative_to='right_wheel_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 1.5707963267948959 0 0</pose>
+        <mass>2.6819999999999999</mass>
+        <inertia>
+          <ixx>0.0071890047162000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0071890047162000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0127688094324</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_wheel_collision'>
+        <pose>0 0 0 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.059999999999999998</length>
+            <radius>0.09758</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='right_wheel_visual'>
+        <pose>0 0 0 1.5707963267948959 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.059999999999999998</length>
+            <radius>0.09758</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>1 0 0 1</diffuse>
+          <ambient>1 0 0 1</ambient>
+        </material>
+      </visual>
+      
+
+    </link>
+    <frame name='LB_caster_wheel_joint' attached_to='base_link'>
+      <pose>-0.54080000000000006 -0.39800000000000002 -0.050000000000000003 0 0 0</pose>
+    </frame>
+    <frame name='left_back_caster_wheel_link' attached_to='LB_caster_wheel_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='LB_leg_joint' attached_to='base_link'>
+      <pose>-0.34749999999999998 -0.42349999999999999 0.068 0 0 0</pose>
+    </frame>
+    <frame name='left_back_leg_link' attached_to='LB_leg_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='LF_caster_wheel_joint' attached_to='base_link'>
+      <pose>0.54080000000000006 -0.39800000000000002 -0.050000000000000003 0 0 0</pose>
+    </frame>
+    <frame name='left_front_caster_wheel_link' attached_to='LF_caster_wheel_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='LF_leg_joint' attached_to='base_link'>
+      <pose>0.34749999999999998 -0.42349999999999999 0.068 0 0 0</pose>
+    </frame>
+    <frame name='left_front_leg_link' attached_to='LF_leg_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='RB_caster_wheel_joint' attached_to='base_link'>
+      <pose>-0.54080000000000006 0.39800000000000002 -0.050000000000000003 0 0 0</pose>
+    </frame>
+    <frame name='right_back_caster_wheel_link' attached_to='RB_caster_wheel_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='RB_leg_joint' attached_to='base_link'>
+      <pose>-0.34749999999999998 0.42349999999999999 0.068 0 0 0</pose>
+    </frame>
+    <frame name='right_back_leg_link' attached_to='RB_leg_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='RF_caster_wheel_joint' attached_to='base_link'>
+      <pose>0.54080000000000006 0.39800000000000002 -0.050000000000000003 0 0 0</pose>
+    </frame>
+    <frame name='right_front_caster_wheel_link' attached_to='RF_caster_wheel_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='RF_leg_joint' attached_to='base_link'>
+      <pose>0.34749999999999998 0.42349999999999999 0.068 0 0 0</pose>
+    </frame>
+    <frame name='right_front_leg_link' attached_to='RF_leg_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='base_imu_joint' attached_to='base_link'>
+      <pose>0.36659999999999998 0 0.23300000000000001 0 0 3.1415926535897931</pose>
+    </frame>
+    <frame name='imu_link' attached_to='base_imu_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='scanner_mount_to_scanner' attached_to='scanner_mount_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='scanner_laser' attached_to='scanner_mount_to_scanner'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='base_scanner_mount_joint' attached_to='base_link'>
+      <pose>0.5 0 0.23300000000000001 0 0 0</pose>
+    </frame>
+    <frame name='scanner_mount_link' attached_to='base_scanner_mount_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='top_joint' attached_to='dummy_link'>
+      <pose>0 0 0.5995 0 0 0</pose>
+    </frame>
+    <frame name='top_link' attached_to='top_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='dummy_link_base_joint' attached_to='dummy_link'>
+      <pose>0 0 0.104 0 0 0</pose>
+    </frame>
+    <frame name='base_link' attached_to='dummy_link_base_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    
+  </model>
+</sdf>
